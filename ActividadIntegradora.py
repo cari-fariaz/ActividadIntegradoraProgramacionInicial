@@ -1,30 +1,46 @@
-listaNumero = []
+'''Ingreso de los números a sumar'''
 
-numeroUno = int (input("Ingrese el primer número: "))
-listaNumero.append (numeroUno)
-numeroDos = int (input("Ingrese el segundo número: "))
-listaNumero.append (numeroDos)
-numeroTres = int (input("Ingrese el tercer número: "))
-listaNumero.append (numeroTres)
-numeroCuatro = int (input("Ingrese el cuarto número: "))
-listaNumero.append (numeroCuatro)
-numeroCinco = int (input("Ingrese el quinto número: "))
-listaNumero.append (numeroCinco)
+listaNumeros = []
 
-print ("Los números introducidos por el usuario son:", listaNumero)
+for i in range(5):
+    x = int(input('Ingrese un número: '))
+    listaNumeros.append(x)
+print('Números Ingresados:', listaNumeros)
 
-sumaParametros = sum(listaNumero)
+'''SUMA'''
 
-print ("La suma total de los valores es: ",sumaParametros)
+def calc_suma():
+    suma = 0
+    for i in range(5):
+        suma += listaNumeros[i]
+    return suma
 
-promedioLista = sumaParametros / 5
+print('suma:',calc_suma())
 
-print ("El promedio de los números de la lista es: ", promedioLista)
+'''Cálculo del Promedio. Usando función len()'''
 
-funcionMaximo = max (listaNumero)
+def calc_prom():
+    suma = 0
+    cant=len(listaNumeros)
+    for i in range(cant):
+        suma += listaNumeros[i]
+        promedio = suma / cant
+    return promedio
 
-print ("El valor máximo de la lista es: ",funcionMaximo)
+print('Promedio:',calc_prom())
 
-funcionMinimo = min (listaNumero)
+'''Búsqueda del mayor num '''
+def calc_may():
+    cant=len(listaNumeros)
+    for i in range(cant):
+        mayor= max(listaNumeros)
+    return mayor
+print('Mayor:',calc_may())
 
-print ("El valor mínimo de la lista es el: ", funcionMinimo)
+'''Búsqueda del menor num '''
+def calc_menor():
+    cant=len(listaNumeros)
+    for i in range(cant):
+        menor= min(listaNumeros)
+    return menor
+print('Mayor:',calc_menor())
